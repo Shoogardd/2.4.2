@@ -2,15 +2,15 @@ package web.model;
 
 public class Car {
     String сarBrand;
-    String cantry;
+    String country;
     int age;
 
     public Car() {
     }
 
-    public Car(String сarBrand, String cantry, int age) {
+    public Car(String сarBrand, String Jopka, int age) {
         this.сarBrand = сarBrand;
-        this.cantry = cantry;
+        this.country = Jopka;
         this.age = age;
     }
 
@@ -22,12 +22,12 @@ public class Car {
         this.сarBrand = сarBrand;
     }
 
-    public String getCantry() {
-        return cantry;
+    public String getCountry() {
+        return country;
     }
 
-    public void setCantry(String cantry) {
-        this.cantry = cantry;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public int getAge() {
@@ -42,7 +42,7 @@ public class Car {
     public String toString() {
         return "Car{" +
                 "сarBrand='" + сarBrand + '\'' +
-                ", сarModel='" + cantry + '\'' +
+                ", сarModel='" + country + '\'' +
                 ", age=" + age +
                 '}';
     }

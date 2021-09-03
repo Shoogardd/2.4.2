@@ -11,7 +11,7 @@ public class CarDAOimpl implements CarDAO {
     private static final List<Car> cars = new ArrayList<>();
 
 
-    static {
+     {
         cars.add(new Car("Mazda","Japan", 2008));
         cars.add(new Car("BMW","Germany", 2020));
         cars.add(new Car("Opel=(","England", 2014));
