@@ -32,7 +32,6 @@
 
     <tr th:each="Car, state : ${cars}"
         class="row" th:classappend="${state.odd} ? 'odd-row' : 'even-row'">
-
         <td th:text="${state.count}"></td>
         <td th:text="${Car.carBrand}"></td>
         <td th:text="${Car.cantry}"></td>
