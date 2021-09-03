@@ -8,9 +8,9 @@ public class Car {
     public Car() {
     }
 
-    public Car(String сarBrand, String Jopka, int age) {
+    public Car(String сarBrand, String country, int age) {
         this.сarBrand = сarBrand;
-        this.country = Jopka;
+        this.country = country;
         this.age = age;
     }
 
@@ -42,7 +42,7 @@ public class Car {
     public String toString() {
         return "Car{" +
                 "сarBrand='" + сarBrand + '\'' +
-                ", сarModel='" + country + '\'' +
+                ", country='" + country + '\'' +
                 ", age=" + age +
                 '}';
     }
