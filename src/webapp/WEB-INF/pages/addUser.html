@@ -113,20 +113,21 @@
             <legend>Данные пользователя</legend>
             <p>
                 <label th:for="name">Имя</label>
-                <input type="text" name="name" th:id="name" th:value="${user.getName()}">
+                <input required type="text" name="name" th:id="name" th:value="${user.getName()}">
             </p>
             <p>
                 <label th:for="lastName">Фамилия</label>
-                <input type="text" name="lastname" th:id="lastname" th:value="${user.getLastname()}"><br/>
+                <input required type="text" name="lastname" th:id="lastname" th:value="${user.getLastname()}"><br/>
 
             </p>
             <p>
                 <label th:for="email">Почтовый ящик</label>
-                <input type="text" name="email" th:id="email" th:value="${user.getEmail()}"><br/>
+                <input required type="text" name="email" th:id="email"  th:value="${user.getEmail()}"><br/>
             </p>
             <p>
-                <label th:for="email">Номер телефона</label>
-                <input type="text" name="foneNumber" th:id="foneNumber" th:value="${user.getFoneNumber()}"><br/>
+                <label th:for="foneNumber">Номер телефона</label>
+                <input type="tel" placeholder="+7-903-56-89"
+                       pattern="\+\d-\d{3}-\d{2}-\d{2}" name="foneNumber" th:id="foneNumber" th:value="${user.getFoneNumber()}"><br/>
             </p>
         </fieldset>
         <button type="submit">Сохранить пользователя</button>
