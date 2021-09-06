@@ -1,4 +1,4 @@
-package web.DAO;
+package web.Dao;
 
 import org.springframework.stereotype.Repository;
 import web.model.User;
@@ -7,44 +7,39 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
-public class UserDAOImpl implements UserDAO {
+public class UserDaoImpl implements UserDao {
 
     @PersistenceContext
     private EntityManager entityManager;
 
-    protected EntityManager getEntityManager() {
-        return this.entityManager;
-    }
-
-
     @Override
     public void add(User user) {
-        getEntityManager().persist(user);
+        entityManager.persist(user);
     }
 
     @Override
     @SuppressWarnings("unchecked")
     public void delete(long id) {
-        getEntityManager().createQuery("delete from User where id=: id")
+        entityManager.createQuery("delete from User where id=: id")
                 .setParameter("id", id)
                 .executeUpdate();
     }
 
     @Override
     public void editUser(User user) {
-        getEntityManager().merge(user);
+        entityManager.merge(user);
     }
 
     @Override
     public User getUserById(Long id) {
-        return getEntityManager().find(User.class, id);
+        return entityManager.find(User.class, id);
     }
 
     @Override
     @SuppressWarnings("unchecked")
     public List<User> listUsers() {
 
-        return getEntityManager().createQuery("from User").getResultList();
+        return entityManager.createQuery("from User").getResultList();
 
     }
 }

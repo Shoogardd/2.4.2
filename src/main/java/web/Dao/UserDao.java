@@ -1,10 +1,10 @@
-package web.DAO;
+package web.Dao;
 
 import web.model.User;
 
 import java.util.List;
 
-public interface UserDAO {
+public interface UserDao {
     void add(User user);
     void delete(long id);
     void editUser(User user);
