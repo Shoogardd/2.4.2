@@ -94,11 +94,11 @@
             color: #EF3B3A;
         }
         body {
-            background: #76b852; /* fallback for old browsers */
-            background: -webkit-linear-gradient(right, #76b852, #8DC26F);
-            background: -moz-linear-gradient(right, #76b852, #8DC26F);
-            background: -o-linear-gradient(right, #76b852, #8DC26F);
-            background: linear-gradient(to left, #76b852, #8DC26F);
+            background: #52b8b5; /* fallback for old browsers */
+            background: -webkit-linear-gradient(right, #52b8b5, #8DC26F);
+            background: -moz-linear-gradient(right, #52b8b5, #8DC26F);
+            background: -o-linear-gradient(right, #52b8b5, #8DC26F);
+            background: linear-gradient(to left, #52b8b5, #8DC26F);
             font-family: "Roboto", sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -113,16 +113,16 @@
             <legend>Данные пользователя</legend>
             <p>
                 <label th:for="name">Имя</label>
-                <input required type="text" name="name" th:id="name" th:value="${user.getName()}">
+                <input required type="text" placeholder="Имя" name="name" th:id="name" th:value="${user.getName()}">
             </p>
             <p>
                 <label th:for="lastName">Фамилия</label>
-                <input required type="text" name="lastname" th:id="lastname" th:value="${user.getLastname()}"><br/>
+                <input required type="text" placeholder="Фамилия" name="lastname" th:id="lastname" th:value="${user.getLastname()}"><br/>
 
             </p>
             <p>
                 <label th:for="email">Почтовый ящик</label>
-                <input required type="text" name="email" th:id="email"  th:value="${user.getEmail()}"><br/>
+                <input required type="text" placeholder="Ваш адрес эл.почты" name="email" th:id="email"  th:value="${user.getEmail()}"><br/>
             </p>
             <p>
                 <label th:for="foneNumber">Номер телефона</label>

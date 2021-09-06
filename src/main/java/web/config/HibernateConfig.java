@@ -87,7 +87,6 @@ import java.util.Properties;
 @PropertySource("classpath:db.properties")
 @ComponentScan(value = "web")
 
-
 public class HibernateConfig {
 
     private Environment env;

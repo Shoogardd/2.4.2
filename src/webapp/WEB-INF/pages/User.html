@@ -9,7 +9,6 @@
         table {
             font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
             font-size: 14px;
-            background: white;
             max-width: 70%;
             width: 70%;
             border-collapse: collapse;
@@ -21,15 +20,29 @@
             color: #039;
             padding: 10px 15px;
         }
+        h1 {
+            color: #669;
+        }
 
         td {
             color: #669;
-            border-top: 1px solid #e8edff;
+            border-top: 1px solid rgba(62, 104, 110, 0.52);
             padding: 10px 15px;
         }
 
         tr:hover td {
-            background: #e8edff;
+            background: rgba(62, 104, 110, 0.43);
+        }
+
+        body {
+            background: #52b8b5; /* fallback for old browsers */
+            background: -webkit-linear-gradient(right, #52b8b5, #8DC26F);
+            background: -moz-linear-gradient(right, #52b8b5, #8DC26F);
+            background: -o-linear-gradient(right, #52b8b5, #8DC26F);
+            background: linear-gradient(to left, #52b8b5, #8DC26F);
+            font-family: "Roboto", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         button {
