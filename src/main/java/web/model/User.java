@@ -1,5 +1,7 @@
 package web.model;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 
 @Entity
@@ -21,8 +23,6 @@ public class User {
 
     @Column(name = "foneNumber")
     private String foneNumber;
-
-
 
 
     public User() {
