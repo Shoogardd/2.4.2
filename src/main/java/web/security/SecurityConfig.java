@@ -41,7 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable() //выключаем кроссдоменную секьюрность
                 .authorizeRequests(authorize -> authorize
                         .antMatchers("/").permitAll()
-                        .antMatchers("/user/**").hasRole("USER")
+                        .antMatchers("/user/**").hasAnyRole("USER", "ADMIN")
                         .antMatchers("/admin/**").hasRole ("ADMIN")
                         .anyRequest()
                         .authenticated()
