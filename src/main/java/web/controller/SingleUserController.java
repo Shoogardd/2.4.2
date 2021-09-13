@@ -1,13 +1,9 @@
 package web.controller;
 
-import org.springframework.security.core.annotation.CurrentSecurityContext;
 import org.springframework.stereotype.Controller;
-
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-
 import web.service.UserService;
-
 import java.security.Principal;
 
 @Controller
