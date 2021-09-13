@@ -17,7 +17,7 @@ public class SingleUserController {
         this.userService = userService;
     }
 
-    @GetMapping()
+    @GetMapping
     public String getUserPage2(ModelMap modelMap, Principal principal) {
         modelMap.addAttribute("users", userService.findUserByLogin(principal.getName()));
         return "singleUser";
