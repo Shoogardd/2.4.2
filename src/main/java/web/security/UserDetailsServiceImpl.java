@@ -22,6 +22,6 @@ public class UserDetailsServiceImpl implements org.springframework.security.core
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
         User user = userDao.findUserByLogin(login);
-        return SecurityUser.fromUser(user);
+        return User.fromUser(user);
     }
 }
