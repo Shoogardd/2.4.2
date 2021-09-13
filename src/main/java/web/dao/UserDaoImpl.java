@@ -1,13 +1,9 @@
 package web.dao;
 
-
-
-import com.sun.xml.bind.v2.runtime.unmarshaller.XsiNilLoader;
 import org.springframework.stereotype.Repository;
 import web.model.User;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.criteria.*;
 import java.util.List;
 
 @Repository
