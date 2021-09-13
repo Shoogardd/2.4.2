@@ -18,11 +18,6 @@ public class UserController {
         this.userService = userService;
     }
 
-    @RequestMapping(value = "login",produces = "application/json",
-            method = {RequestMethod.GET, RequestMethod.PUT, RequestMethod.POST, RequestMethod.DELETE})
-    public String loginPage() {
-        return "login";
-    }
 
     @GetMapping(value = "/admin")
     public String UserController(ModelMap model) {

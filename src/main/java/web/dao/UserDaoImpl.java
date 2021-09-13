@@ -2,12 +2,12 @@ package web.dao;
 
 
 
+import com.sun.xml.bind.v2.runtime.unmarshaller.XsiNilLoader;
 import org.springframework.stereotype.Repository;
 import web.model.User;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.*;
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
@@ -22,7 +22,6 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     public void delete(long id) {
         entityManager.createQuery("delete from User where id=: id")
                 .setParameter("id", id)
@@ -40,20 +39,18 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     public List<User> listUsers() {
 
         return entityManager.createQuery("from User").getResultList();
 
     }
+
     @Override
     public User findUserByLogin(String login) {
-        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-        CriteriaQuery<User> criteriaQuery = criteriaBuilder.createQuery(User.class);
-        Root<User> itemRoot = criteriaQuery.from(User.class);
-        criteriaQuery.where(criteriaBuilder.equal(itemRoot.get("login"), login));
-        return  entityManager.createQuery(criteriaQuery).getSingleResult();
 
+        return (User) entityManager.createQuery(" from User where login=: login")
+                .setParameter("login", login)
+                .getSingleResult();
     }
 
 }
