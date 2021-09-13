@@ -18,46 +18,49 @@ public class UserController {
         this.userService = userService;
     }
 
+    @RequestMapping(value = "login",produces = "application/json",
+            method = {RequestMethod.GET, RequestMethod.PUT, RequestMethod.POST, RequestMethod.DELETE})
+    public String loginPage() {
+        return "login";
+    }
 
-    @GetMapping(value = "/user")
-    public String carController(ModelMap model) {
-
+    @GetMapping(value = "/admin")
+    public String UserController(ModelMap model) {
         model.addAttribute("users", userService.listUsers());
-
         return "User";
     }
 
-    @GetMapping("/user/edit")
+    @GetMapping("/admin/edit")
     public String editUser(@RequestParam(value = "id", required = false) Long id, Model model) {
         User user = userService.getUserById(id);
         model.addAttribute("user", user);
         return "editPage";
     }
 
-    @PostMapping(value = "users/edit")
+    @PostMapping(value = "/admin/edit")
     public String editUser(@ModelAttribute("user") User user) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("redirect:/");
         userService.editUser(user);
-        return "redirect:/user";
+        return "redirect:/admin";
     }
 
-    @GetMapping("/user/delete")
+    @GetMapping("/admin/delete")
     public String deleteUserById(@RequestParam(value = "id", required = false) Long id) {
         userService.delete(id);
-        return "redirect:/user";
+        return "redirect:/admin";
     }
 
-    @GetMapping(value = "users/add")
+    @GetMapping(value = "/admin/add")
     public String addUser(Model model) {
         User user = new User();
         model.addAttribute("user", user);
         return "addUser";
     }
 
-    @PostMapping(value = "users/add")
+    @PostMapping(value = "/admin/add")
     public String addUser(@ModelAttribute("user") User user) {
         userService.add(user);
-        return "redirect:/user";
+        return "redirect:/admin";
     }
 }

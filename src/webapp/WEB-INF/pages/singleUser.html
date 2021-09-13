@@ -116,26 +116,10 @@
         <td th:text="${User.lastname}">Фамилия</td>
         <td th:text="${User.email}">eMail</td>
         <td th:text="${User.foneNumber}">Номер телефона</td>
-        <td>
-            <form th:action="@{/admin/edit(id=${User.id})}" th:object="${User}">
-                <input type="hidden" name="id" th:value="${User.id}">
-                <button type="submit">Изменить</button>
-            </form>
-        </td>
-
-        <td>
-            <form th:action="@{/admin/delete(id=${User.id})}" th:object="${User}">
-                <input type="hidden" name="id" th:value="${User.id}">
-                <button type="submit">Удалить</button>
-            </form>
-        </td>
     </tr>
 
 </table>
 
-<form th:action="@{admin/add}">
-    <button type="submit">Добавить нового пользователя</button>
-</form>
 
 
 <form th:action="@{/logout}">
