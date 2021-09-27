@@ -14,9 +14,9 @@ public class HelloController {
 	@GetMapping(value = "/")
 	public String printWelcome(ModelMap model) {
 		List<String> messages = new ArrayList<>();
-		messages.add("Добро пожаловать!)");
-		messages.add("Я долго мучался пока все получилось");
-		messages.add("Версия 1");
+		messages.add("hello!)");
+		messages.add("konkretno hello");
+		messages.add("1111");
 		model.addAttribute("messages", messages);
 		return "index";
 	}
